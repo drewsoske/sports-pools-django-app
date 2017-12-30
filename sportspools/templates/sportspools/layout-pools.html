@@ -1,0 +1,51 @@
+{% load static %}
+<html>
+<head>
+    <title>{{ page_name }}</title>
+    <!--link rel="stylesheet" type="text/css" href="{% static 'sportspools/style.css' %}" /-->
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.16/css/jquery.dataTables.css">
+    <style>
+        {% if sport_id == 1 %}
+            body { font-family:calibri; background:#000000 url(https://3hltour.com/wp-content/uploads/2015/11/hockey-rink-wallpaper.jpg) no-repeat center center fixed; background-size:cover; }
+        {% elif sport_id == 2 %}
+            body { font-family:calibri; background:#000000 url(http://marketing-cdn.teamsnap.com/iStock_000016157408Medium.jpg) no-repeat center center fixed; background-size:cover; }
+	{% else %}
+	    body { font-family:calibri; background:black; color:white; }
+        {% endif %}
+        html,body,td,th { font-family:verdana; font-size:14px; }
+	a { text-decoration:none !important; }
+	table { border-collapse:collapse; margin:20px auto; width:70% important }
+	td,th { font-size:10px; text-align:right; width:12% important; vertical-align:top; padding:4px }
+	th { font-size:18px; text-align:center; }
+	td p { opacity:1; margin:0px; padding:0px; font-size:11px; }
+	td h3, th h3 { opacity:1; margin:2px 0; padding:0px; font-size:22px; }
+	td h1 { font-weight:bold; color:white; font-size:36px; text-align:left; }
+	tr:hover { background:gray; }
+	.starter-template { margin-top:50px; }
+	select { width:100%; }
+	td { opacity:1 }
+	#layout-logo { height:250px; width:auto; }
+	#footer { font-size:10px; text-align:right; color:silver; }
+        div.container { width: 70% important; }
+        table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd { background-color: silver; }
+    </style>
+</head>
+<body>
+{% block content %}
+<h2>Go Get Some Content!</h2>
+{% endblock %}
+<div id='footer'>Drew's Django</div>
+<script type="text/javascript" charset="utf8" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.js"></script>
+<script>
+$(document).ready(function() {
+    $('.datatable').DataTable({
+        "order": [[ 1, "desc" ]],
+        "paging": false,
+        "info": false,
+        "searching": false,
+    });
+} );
+</script>
+</body>
+</html>

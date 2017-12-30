@@ -1,0 +1,20 @@
+{% extends "sportspools/layout-pools.html" %}
+
+{% block content %}
+{% if feed %}
+    <table class='poolresults'>
+        <tr style='background:none'>
+	    <th><h1><strong>Howdy Sports Fans!</strong></h1></th>
+	</tr>
+	<tr>
+	    <td>
+		<ul>
+		    <li><a href='/nhl'>NHL</a></li>
+		    <li><a href='/nba'>NBA</a></li>
+		    <li><a href='#'>MLB (Coming Soon)</li>
+		</ul>
+	    </td>
+	</tr>
+    </table>
+{% endif %}
+{% endblock %}

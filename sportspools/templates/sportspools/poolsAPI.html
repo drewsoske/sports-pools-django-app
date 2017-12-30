@@ -1,0 +1,46 @@
+{% extends "sportspools/layout-pools.html" %}
+
+{% block content %}
+{% if feed %}
+    <table>
+        <tr style='background:none'>
+	    <td colspan=10 style='text-align:center'>
+                {% if sport_id == 1 %}
+	   	    <img id="layout-logo" class="logo img-responsive" src="https://upload.wikimedia.org/wikipedia/de/thumb/1/19/Logo-NHL.svg/2000px-Logo-NHL.svg.png" alt="pyramid web framework">
+		{% else %}
+		    <img id="layout-logo" class="logo img-responsive" src="https://upload.wikimedia.org/wikipedia/en/thumb/0/03/National_Basketball_Association_logo.svg/136px-National_Basketball_Association_logo.svg.png" alt="pyramid web framework">
+		{% endif %}
+ 		<h1>{{ page_name }} Pool</h1>
+	    </td>
+        </tr>
+    </table>
+    <table class='datatable stripe' width="100%">
+        <thead>
+	<tr style='background-color:orange'>
+	    <th></th>
+            <th></th>
+	    <th>A</th>
+	    <th>B</th>
+	    <th>C</th>
+	    <th>D</th>
+	    <th style='text-align:right'>E</th>
+            <th></th>
+	</tr>
+        </thead>
+        <tbody>
+	{% for mem in feed.members %}
+	    <tr>
+		<td><h3>{{mem.name}}</h3></td>
+		<td><h3>{{mem.total}}</h3></td>
+		<td><h3>{{mem.A.1}}</h3><p>{{mem.A.0}} ({{mem.A.2}})</p></th>
+		<td><h3>{{mem.B.1}}</h3><p>{{mem.B.0}} ({{mem.B.2}})</p></th>
+		<td><h3>{{mem.C.1}}</h3><p>{{mem.C.0}} ({{mem.C.2}})</p></th>
+		<td><h3>{{mem.D.1}}</h3><p>{{mem.D.0}} ({{mem.D.2}})</p></th>
+		<td><h3>{{mem.E.1}}</h3><p>{{mem.E.0}} ({{mem.E.2}})</p></th>
+		<td><h3>{{mem.E2.1}}</h3><p>{{mem.E2.0}} ({{mem.E2.2}})</p></th>
+	    </tr>
+	{% endfor %}
+        </table>
+    </table>
+{% endif %}
+{% endblock %}
